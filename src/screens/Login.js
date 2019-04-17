@@ -8,9 +8,10 @@ class LoginScreen extends React.Component {
     render() {
 
         return (
-            <View>
-
-            </View>
+            <KeyboardAvoidingView style={styles.loginWrapper} behavior="padding">
+                <Image source={require('../assets/logo.png')} />
+                <Text style={styles.appName}>Expluro</Text>
+            </KeyboardAvoidingView>
         )
     }
 }
@@ -21,8 +22,17 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(null, mapDispatchToProps)(LoginComponent);
+export default connect(null, mapDispatchToProps)(LoginScreen);
 
 const styles = StyleSheet.create({
-
+    loginWrapper: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    appName: {
+        fontSize: 24,
+        marginBottom: 30,
+        fontWeight: 'bold'
+    }
 });

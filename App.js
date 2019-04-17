@@ -11,6 +11,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import {connect} from 'react-redux';
 
 import {login, logout} from './src/store/actions/index';
+import LoginScreen from './src/screens/Login';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -23,12 +24,10 @@ type Props = {};
 
 class App extends Component<Props> {
   render() {
+    let showScreen = this.props.logged_in == true? <View><Text>Home</Text></View> : <LoginScreen />;
+
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      showScreen
     );
   }
 }

@@ -1,7 +1,7 @@
 import { LOGIN, LOGOUT } from '../actions/actionTypes';
 
 const initialState = {
-    logged_in: true,
+    logged_in: false,
     token: 'someToken'
 };
 
